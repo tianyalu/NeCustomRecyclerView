@@ -77,13 +77,23 @@
         return sumArray(heights, firstRow, viewList.size()) - scrollY;
     }
 ```
+scroll_y1.png  
+
 ![image](https://github.com/tianyalu/NeCustomRecyclerView/blob/master/show/scroll_y1.png)  
 
+scroll_y2.png  
+ 
 ![image](https://github.com/tianyalu/NeCustomRecyclerView/blob/master/show/scroll_y2.png)  
+
+scroll_y3.png   
 
 ![image](https://github.com/tianyalu/NeCustomRecyclerView/blob/master/show/scroll_y3.png)  
 
+scroll_y4.png   
+
 ![image](https://github.com/tianyalu/NeCustomRecyclerView/blob/master/show/scroll_y4.png)  
+
+scroll_y5.png   
 
 ![image](https://github.com/tianyalu/NeCustomRecyclerView/blob/master/show/scroll_y5.png)  
 
