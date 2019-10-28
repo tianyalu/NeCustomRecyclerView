@@ -190,6 +190,7 @@ public class RecyclerView extends ViewGroup {
                 int y2 = (int) event.getRawY();
                //上滑 正    下滑  负
                 int diffY = currentY - y2;
+                currentY = y2; // 不加影响会变慢   important!!!!!
                 //画布移动，并不影响子控件的位置
                 scrollBy(0, diffY);
         }
@@ -214,6 +215,7 @@ public class RecyclerView extends ViewGroup {
 
     @Override
     public void scrollBy(int x, int y) {
+        Log.e("sty", "diffY: " + y);
         //scrollY表示第一个可见item 的左上顶点距离屏幕左上顶点的距离/手指滑动距离
         scrollY += y;
         //极限值修复
@@ -240,8 +242,7 @@ public class RecyclerView extends ViewGroup {
                 View view = obtainView(firstAddRow, width, heights[firstAddRow]);
                 viewList.add(0, view);
                 firstRow--;
-                scrollY += heights[firstRow + 1];
-//                scrollY += heights[firstRow];  //?????
+                scrollY += heights[firstRow];
             }
             //3.下滑移除 参考show/scroll_y3.png
             while(sumArray(heights, firstRow, viewList.size()) - scrollY -
