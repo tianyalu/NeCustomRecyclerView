@@ -1,6 +1,10 @@
 ## NeCustomRecyclerView 手写RecyclerView（item回收池）
 该例子仅作为理解RecyclerView回收池原理的示例，不做实际用途。
-### 核心代码
+### 1. 核心思想
+RecyclerView之所以能支持千万级Item,是因为其仅处理需要在屏幕显示的View以及View的回收复用机制。
+即首先生成第一屏的ItemView,当有ItemView划出屏幕时，将该ItemView放到回收池中；对于将要划进屏幕的ItemView,
+首先从回收池中找与之相同type的ItemView，若有，则直接使用，否则重新生成。
+### 2. 难点代码
 ```android
     /**
      * 边界极限条件
